@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aplikasi Keuangan</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Aplikasi Keuangan</h1>
+  <div class="container">
+    <input type="text" id="deskripsi" placeholder="Deskripsi Transaksi" />
+    <input type="number" id="harga" placeholder="Harga per Unit" />
+    <input type="number" id="jumlah" placeholder="Jumlah" />
+    <select id="tipe">
+      <option value="income">Pemasukan</option>
+      <option value="expense">Pengeluaran</option>
+    </select>
+    <select id="kategori">
+      <option value="Gaji">Gaji</option>
+      <option value="Makanan">Makanan</option>
+      <option value="Transportasi">Transportasi</option>
+      <option value="Hiburan">Hiburan</option>
+    </select>
+    <button id="tambahTransaksi">Tambah Transaksi</button>
+    <button id="updateTransaksi" style="display: none;">Perbarui Transaksi</button>
+    <button id="downloadPDF">Unduh PDF</button>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Deskripsi</th>
+          <th>Harga</th>
+          <th>Jumlah</th>
+          <th>Total</th>
+          <th>Tipe</th>
+          <th>Kategori</th>
+          <th>Aksi</th>
+        </tr>
+      </thead>
+      <tbody id="daftarTransaksi"></tbody>
+    </table>
+
+    <div id="kalkulator">
+      <h3>Kalkulator Keuangan</h3>
+      <input type="number" id="awal" placeholder="Jumlah Awal" />
+      <input type="number" id="persen" placeholder="Persentase (%)" />
+      <button id="hitung">Hitung</button>
+      <p>Hasil: <span id="hasilKalkulator">0</span></p>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
